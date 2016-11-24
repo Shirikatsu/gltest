@@ -1,0 +1,8 @@
+﻿main.obj : error LNK2019: unresolved external symbol _glfwInit referenced in function _main
+main.obj : error LNK2019: unresolved external symbol _glfwTerminate referenced in function _main
+main.obj : error LNK2019: unresolved external symbol _glfwWindowHint referenced in function _main
+main.obj : error LNK2019: unresolved external symbol _glfwCreateWindow referenced in function _main
+main.obj : error LNK2019: unresolved external symbol _glfwMakeContextCurrent referenced in function _main
+C:\Users\chris\Downloads\glfw-3.2.1.bin.WIN64\glfw-3.2.1.bin.WIN64\lib-vc2015\glfw3.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'X86'
+C:\Users\chris\Downloads\glew-2.0.0-win32\glew-2.0.0\lib\Release\x64\glew32s.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'X86'
+c:\users\chris\documents\visual studio 2015\Projects\opengltest\Debug\opengltest.exe : fatal error LNK1120: 5 unresolved externals
