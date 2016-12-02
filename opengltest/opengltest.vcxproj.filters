@@ -33,4 +33,12 @@
       <Filter>Source Files\shaders</Filter>
     </Text>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="cube_vertex.glsl">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+    <None Include="cube_fragment.glsl">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+  </ItemGroup>
 </Project>

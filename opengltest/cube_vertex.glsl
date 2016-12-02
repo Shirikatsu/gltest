@@ -1,17 +1,20 @@
-#version 410 core                                                  
-                                                                               
-in vec4 position;                                                  
-                                                                               
-out VS_OUT                                                         
-{                                                                  
-    vec4 color;                                                    
-} vs_out;                                                          
-                                                                               
-uniform mat4 mv_matrix;                                            
-uniform mat4 proj_matrix;                                          
-                                                                               
-void main(void)                                                    
-{                                                                  
-    gl_Position = proj_matrix * mv_matrix * position;              
-    vs_out.color = position * 2.0 + vec4(0.5, 0.5, 0.5, 0.0);      
+#version 330 core
+  
+layout (location = 0) in vec3 position;
+layout (location = 1) in vec3 color;
+
+out vec3 newColor;
+
+uniform mat4 transform;
+uniform float third_phase;
+uniform float time_value;
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+
+void main()
+{
+    gl_Position = projection * view * model * vec4(position.x, position.y, position.z, 1.0f);
+	newColor = vec3((sin(time_value + (color.x * third_phase)) / 2.0) + 0.3, (sin(time_value + (color.y * third_phase)) / 2.0) + 0.3, (sin(time_value + (color.z * third_phase)) / 2.0) + 0.3);
 }

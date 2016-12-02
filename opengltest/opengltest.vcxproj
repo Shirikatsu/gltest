@@ -73,7 +73,7 @@
     <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;C:\Users\chris\Downloads\glfw-3.2.1.bin.WIN64\glfw-3.2.1.bin.WIN64\lib-vc2015;C:\Users\chris\Downloads\glew-2.0.0-win32\glew-2.0.0\lib\Release\x64;</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Users\chris\Downloads\glew-2.0.0-win32\glew-2.0.0\include\GL;C:\Users\chris\Downloads\glfw-3.2.1.bin.WIN64\glfw-3.2.1.bin.WIN64\include\GLFW;C:\Users\chris\Downloads\Include;C:\Users\chris\Downloads\glfw-3.2.1.bin.WIN64\glfw-3.2.1.bin.WIN64\include;C:\Users\chris\Downloads\glew-2.0.0-win32\glew-2.0.0\include;C:\Users\chris\Documents\gl3w\include;C:\Users\chris\Downloads\sb7code-master\sb7code-master\include;</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Users\chris\Downloads\glew-2.0.0-win32\glew-2.0.0\include\GL;C:\Users\chris\Downloads\glfw-3.2.1.bin.WIN64\glfw-3.2.1.bin.WIN64\include\GLFW;C:\Users\chris\Downloads\Include;C:\Users\chris\Downloads\glfw-3.2.1.bin.WIN64\glfw-3.2.1.bin.WIN64\include;C:\Users\chris\Downloads\glew-2.0.0-win32\glew-2.0.0\include;C:\Users\chris\Documents\gl3w\include;C:\Users\chris\Downloads\sb7code-master\sb7code-master\include;C:\Users\chris\Downloads\glm-0.9.8.3\glm\glm;</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;C:\Users\chris\Downloads\glfw-3.2.1.bin.WIN64\glfw-3.2.1.bin.WIN64\lib-vc2015;C:\Users\chris\Downloads\glew-2.0.0-win32\glew-2.0.0\lib\Release\x64;</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -129,6 +129,10 @@
     <Text Include="fragment.glsl" />
     <Text Include="fragment2.glsl" />
     <Text Include="vertex.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cube_fragment.glsl" />
+    <None Include="cube_vertex.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

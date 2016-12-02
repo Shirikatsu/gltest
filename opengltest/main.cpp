@@ -15,6 +15,9 @@
 #include <chrono>
 #include <thread>
 #include <math.h>
+#include <glm.hpp>
+#include <gtc/matrix_transform.hpp>
+#include <gtc/type_ptr.hpp>
 
 void key_callback(GLFWwindow *window, int key, int scancode, int action, int mode);
 std::string readFile(const char *filePath);
@@ -62,9 +65,9 @@ int main() {
 	};
 
 	GLfloat vertices[] = {
-		-0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f,
-		0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f,
-		0.5f,  0.5f, 0.0f, 0.0f, 0.0f, 1.0f,
+		-0.5f, -0.5f, 0.0f, 2.0f, 1.0f, 0.0f,
+		0.5f, -0.5f, 0.0f, 0.0f, 2.0f, 1.0f,
+		0.5f,  0.5f, 0.0f, 1.0f, 0.0f, 2.0f,
 		-0.5f,  0.5f, 0.0f, 1.0f, 1.0f, 1.0f
 	};
 
@@ -72,46 +75,65 @@ int main() {
 		0, 1, 3,
 		1, 2, 3
 	};
-	/*
 	GLfloat cube_vertices[] = {
-		-0.25f, 0.25f, -0.25f,
-		-0.25f, -0.25f, -0.25f,
-		0.25f, -0.25f, -0.25f,
-		0.25f, -0.25f, -0.25f,
-		0.25f, 0.25f, -0.25f,
-		-0.25f, 0.25f, -0.25f,
-		-0.25f, 0.25f, -0.25f,
-		0.25f, 0.25f, -0.25f,
-		0.25f, 0.25f ,0.25f,
-		0.25f, 0.25f, 0.25f,
-		-0.25f, 0.25f, 0.25f,
-		-0.25f, 0.25f, -0.25f
+		-0.5f, -0.5f, -0.5f, 2.0f, 1.0f, 0.0f,
+		0.5f, -0.5f, -0.5f, 0.0f, 2.0f, 1.0f,
+		0.5f,  0.5f, -0.5f, 1.0f, 0.0f, 2.0f,
+		0.5f,  0.5f, -0.5f, 2.0f, 1.0f, 0.0f,
+		-0.5f,  0.5f, -0.5f, 0.0f, 2.0f, 1.0f,
+		-0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 2.0f,
+
+		-0.5f, -0.5f,  0.5f, 2.0f, 1.0f, 0.0f,
+		0.5f, -0.5f,  0.5f, 0.0f, 2.0f, 1.0f,
+		0.5f,  0.5f,  0.5f, 1.0f, 0.0f, 2.0f,
+		0.5f,  0.5f,  0.5f, 2.0f, 1.0f, 0.0f,
+		-0.5f,  0.5f,  0.5f, 0.0f, 2.0f, 1.0f,
+		-0.5f, -0.5f,  0.5f, 1.0f, 0.0f, 2.0f,
+
+		-0.5f,  0.5f,  0.5f, 2.0f, 1.0f, 0.0f,
+		-0.5f,  0.5f, -0.5f, 0.0f, 2.0f, 1.0f,
+		-0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 2.0f,
+		-0.5f, -0.5f, -0.5f, 2.0f, 1.0f, 0.0f,
+		-0.5f, -0.5f,  0.5f, 0.0f, 2.0f, 1.0f,
+		-0.5f,  0.5f,  0.5f, 1.0f, 0.0f, 2.0f,
+
+		0.5f,  0.5f,  0.5f, 2.0f, 1.0f, 0.0f,
+		0.5f,  0.5f, -0.5f, 0.0f, 2.0f, 1.0f,
+		0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 2.0f,
+		0.5f, -0.5f, -0.5f, 2.0f, 1.0f, 0.0f,
+		0.5f, -0.5f,  0.5f, 0.0f, 2.0f, 1.0f,
+		0.5f,  0.5f,  0.5f, 1.0f, 0.0f, 2.0f,
+
+		-0.5f, -0.5f, -0.5f, 2.0f, 1.0f, 0.0f,
+		0.5f, -0.5f, -0.5f, 0.0f, 2.0f, 1.0f,
+		0.5f, -0.5f,  0.5f, 1.0f, 0.0f, 2.0f,
+		0.5f, -0.5f,  0.5f, 2.0f, 1.0f, 0.0f,
+		-0.5f, -0.5f,  0.5f, 0.0f, 2.0f, 1.0f,
+		-0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 2.0f,
+
+		-0.5f,  0.5f, -0.5f, 2.0f, 1.0f, 0.0f,
+		0.5f,  0.5f, -0.5f, 0.0f, 2.0f, 1.0f,
+		0.5f,  0.5f,  0.5f, 1.0f, 0.0f, 2.0f,
+		0.5f,  0.5f,  0.5f, 2.0f, 1.0f, 0.0f,
+		-0.5f,  0.5f,  0.5f, 0.0f, 2.0f, 1.0f,
+		-0.5f,  0.5f, -0.5f, 1.0f, 0.0f, 2.0f
 	};
 
-	GLuint VAO;
-	glGenVertexArrays(1, &VAO);
-	glBindVertexArray(VAO);
+	GLuint VBO;
+	glGenBuffers(1, &VBO);
 
-	GLuint buffer;
-	glGenBuffers(1, &buffer);
-	glBindBuffer(GL_ARRAY_BUFFER, buffer);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(cube_vertices), cube_vertices, GL_STATIC_DRAW);
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(cube_vertices), cube_vertices, GL_STREAM_DRAW);
 
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, NULL);
-	glDisableVertexAttribArray(0);
-
-	float currentTime = time(0);
-	float f = (float)currentTime * (float)M_PI * 0.1f;
-	vmath::mat4 mv_matrix =
-		vmath::translate(0.0f, 0.0f, -4.0f) *
-		vmath::translate(sinf(2.1f * f) * 0.5f,
-			cosf(1.7f * f) * 0.5f,
-			sinf(1.3f * f) * cosf(1.5f * f) * 2.0f) *
-		vmath::rotate((float)currentTime * 45.0f, 0.0f, 1.0f, 0.0f) *
-		vmath::rotate((float)currentTime * 81.0f, 1.0f, 0.0f, 0.0f);
-
-	*/
-
+	GLint cube_vertex_shader = create_vertex_shader("cube_vertex.glsl");
+	GLint cube_fragment_shader = create_fragment_shader("cube_fragment.glsl");
+	GLuint cube_shader_program;
+	cube_shader_program = glCreateProgram();
+	glAttachShader(cube_shader_program, cube_vertex_shader);
+	glAttachShader(cube_shader_program, cube_fragment_shader);
+	glLinkProgram(cube_shader_program);
+	glDeleteShader(cube_vertex_shader);
+	glDeleteShader(cube_fragment_shader);
 	
 
 	//Elements Buffer
@@ -121,7 +143,7 @@ int main() {
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STREAM_DRAW);
 
 	//Vertices Buffer
-	GLuint VBO;
+	/*GLuint VBO;
 	glGenBuffers(1, &VBO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STREAM_DRAW);
@@ -146,7 +168,7 @@ int main() {
 
 	glDeleteShader(vertex_shader);
 	glDeleteShader(fragment_shader);
-	glDeleteShader(fragment_shader2);
+	glDeleteShader(fragment_shader2);*/
 
 	//Vertex Array Object
 	GLuint VAO;
@@ -158,64 +180,72 @@ int main() {
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (GLvoid*)(3 * sizeof(GLfloat)));
 	glEnableVertexAttribArray(1);
 
+	//glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0 , (GLvoid*)0);
+	//glEnableVertexAttribArray(0);
+
 	glBindVertexArray(0);
 
 	int time_diff = time(0);
 	int shader1 = 0;
 
+	//model = glm::rotate(model, -35.0f, glm::vec3(1.0f, 0.0f, 0.0f));
+
+	glEnable(GL_DEPTH_TEST);
 	while (!glfwWindowShouldClose(window))
 	{
-		/*if (time(0) - time_diff > 1) {
-			if (shader1) {
-				glUseProgram(shader_program);
-				std::cout << "Using shader 1" << std::endl;
-				shader1 = 0;
-			}
-			else {
-				glUseProgram(shader_program2);
-				std::cout << "Using shader 2" << std::endl;
-				shader1++;
-			}
-			time_diff = time(0);
-		}*/
 		glfwPollEvents();
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 		float third_phase = (2*M_PI) / 3;
 		GLfloat timeValue = glfwGetTime();
 
-		GLfloat corner1_colour[] = { (sin(timeValue) / 2.0) + 0.5 , (sin(timeValue + third_phase) / 2) + 0.5 , (sin(timeValue + 2 * third_phase) / 2) + 0.5, 1.0f};
-		GLfloat corner2_colour[] = { (sin(timeValue + 2.0 * third_phase) / 2) + 0.5 , (sin(timeValue) / 2) + 0.5 , (sin(timeValue + third_phase) / 2) + 0.5 };
-		GLfloat corner3_colour[] = { (sin(timeValue + third_phase) / 2) + 0.5 , (sin(timeValue + 2 * third_phase) / 2) + 0.5 , (sin(timeValue) / 2) + 0.5 };
+		glUseProgram(cube_shader_program);
 
-		GLfloat red_value = (sin(timeValue) / 2) + 0.5;
-		GLfloat blue_value = (sin(timeValue + third_phase) / 2) + 0.5;
-		GLfloat green_value = (sin(timeValue + 2 * third_phase) / 2) + 0.5;
+		glm::mat4 view;
+		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -2.0f));
 
-		vertices[3] = (sin(timeValue) / 2.0) + 0.5;
-		vertices[4] = (sin(timeValue + third_phase) / 2) + 0.5;
-		vertices[5] = (sin(timeValue + 2 * third_phase) / 2) + 0.5;
-		vertices[9] = (sin(timeValue + 2.0 * third_phase) / 2) + 0.5;
-		vertices[10] = (sin(timeValue) / 2) + 0.5;
-		vertices[11] = (sin(timeValue + third_phase) / 2) + 0.5;
-		vertices[15] = (sin(timeValue + third_phase) / 2) + 0.5;
-		vertices[16] = (sin(timeValue + 2 * third_phase) / 2) + 0.5;
-		vertices[17] = (sin(timeValue) / 2) + 0.5;
+		glm::mat4 projection;
+		projection = glm::perspective(80.0f, 800.0f / 600.0f, 0.1f, 100.0f);
 
-		glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STREAM_DRAW);
+		glm::mat4 model;
+		model = glm::rotate(model, timeValue, glm::vec3(0.5f, 1.0f, 0.0f));
 
-		//glDisableVertexAttribArray(1);
-		//GLint vertexColorLocation = glGetUniformLocation(shader_program, "ourColor");
-		glUseProgram(shader_program);
-		glVertexAttrib3fv(1, corner1_colour);
-		//glVertexAttrib3fv(1, corner2_colour);
-		//glUniform4f(vertexColorLocation, red_value, green_value, blue_value, 1.0f);
+		GLint viewLoc = glGetUniformLocation(cube_shader_program, "view");
+		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+		GLint projLoc = glGetUniformLocation(cube_shader_program, "projection");
+		glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
+
+		GLint modelLoc = glGetUniformLocation(cube_shader_program, "model");
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+
+		GLint phase = glGetUniformLocation(cube_shader_program, "third_phase");
+		glUniform1f(phase, third_phase);
+		GLint time_val = glGetUniformLocation(cube_shader_program, "time_value");
+		glUniform1f(time_val, timeValue);
+
+		/*glUseProgram(shader_program);
+		glm::mat4 trans;
+		trans = glm::rotate(trans, timeValue, glm::vec3(0.0, 0.0, 1.0));
+		GLint matrix = glGetUniformLocation(shader_program, "transform");
+		glUniformMatrix4fv(matrix, 1, GL_FALSE, glm::value_ptr(trans));
+		GLint phase = glGetUniformLocation(shader_program, "third_phase");
+		glUniform1f(phase, third_phase);
+		GLint time_val = glGetUniformLocation(shader_program, "time_value");
+		glUniform1f(time_val, timeValue);
+
+		GLint modelLoc = glGetUniformLocation(shader_program, "model");
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		GLint viewLoc = glGetUniformLocation(shader_program, "view");
+		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+		GLint projLoc = glGetUniformLocation(shader_program, "projection");
+		glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));*/
 
 		glBindVertexArray(VAO);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, VBO);
 		//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+		glDrawArrays(GL_TRIANGLES, 0, 36);
 		glBindVertexArray(0);
 
 

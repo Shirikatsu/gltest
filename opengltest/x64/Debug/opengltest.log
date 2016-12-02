@@ -1,26 +1,4 @@
-﻿  main.cpp
-c:\users\chris\documents\visual studio 2015\projects\opengltest\opengltest\main.cpp(163): warning C4244: 'initializing': conversion from 'time_t' to 'int', possible loss of data
-c:\users\chris\documents\visual studio 2015\projects\opengltest\opengltest\main.cpp(185): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\chris\documents\visual studio 2015\projects\opengltest\opengltest\main.cpp(186): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\documents\visual studio 2015\projects\opengltest\opengltest\main.cpp(188): warning C4838: conversion from 'double' to 'GLfloat' requires a narrowing conversion
-c:\users\chris\documents\visual studio 2015\projects\opengltest\opengltest\main.cpp(188): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\documents\visual studio 2015\projects\opengltest\opengltest\main.cpp(189): warning C4838: conversion from 'double' to 'GLfloat' requires a narrowing conversion
-c:\users\chris\documents\visual studio 2015\projects\opengltest\opengltest\main.cpp(189): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\documents\visual studio 2015\projects\opengltest\opengltest\main.cpp(190): warning C4838: conversion from 'double' to 'GLfloat' requires a narrowing conversion
-c:\users\chris\documents\visual studio 2015\projects\opengltest\opengltest\main.cpp(190): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\documents\visual studio 2015\projects\opengltest\opengltest\main.cpp(192): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\documents\visual studio 2015\projects\opengltest\opengltest\main.cpp(193): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\documents\visual studio 2015\projects\opengltest\opengltest\main.cpp(194): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\documents\visual studio 2015\projects\opengltest\opengltest\main.cpp(196): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\documents\visual studio 2015\projects\opengltest\opengltest\main.cpp(197): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\documents\visual studio 2015\projects\opengltest\opengltest\main.cpp(198): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\documents\visual studio 2015\projects\opengltest\opengltest\main.cpp(199): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\documents\visual studio 2015\projects\opengltest\opengltest\main.cpp(200): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\documents\visual studio 2015\projects\opengltest\opengltest\main.cpp(201): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\documents\visual studio 2015\projects\opengltest\opengltest\main.cpp(202): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\documents\visual studio 2015\projects\opengltest\opengltest\main.cpp(203): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\documents\visual studio 2015\projects\opengltest\opengltest\main.cpp(204): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+﻿LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
 glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\Users\chris\Documents\Visual Studio 2015\Projects\opengltest\x64\Debug\vc120.pdb'; linking object as if no debug info
   opengltest.vcxproj -> C:\Users\chris\Documents\Visual Studio 2015\Projects\opengltest\x64\Debug\opengltest.exe
