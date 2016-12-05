@@ -76,47 +76,47 @@ int main() {
 		1, 2, 3
 	};
 	GLfloat cube_vertices[] = {
-		-0.5f, -0.5f, -0.5f, 2.0f, 1.0f, 0.0f,
-		0.5f, -0.5f, -0.5f, 0.0f, 2.0f, 1.0f,
-		0.5f,  0.5f, -0.5f, 1.0f, 0.0f, 2.0f,
-		0.5f,  0.5f, -0.5f, 2.0f, 1.0f, 0.0f,
+		-0.5f, -0.5f, -0.5f, 3.0f, 2.0f, 1.0f,
+		0.5f, -0.5f, -0.5f, 1.0f, 3.0f, 2.0f,
+		0.5f,  0.5f, -0.5f, 2.0f, 1.0f, 3.0f,
+		0.5f,  0.5f, -0.5f, 2.0f, 1.0f, 3.0f,
 		-0.5f,  0.5f, -0.5f, 0.0f, 2.0f, 1.0f,
-		-0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 2.0f,
-
-		-0.5f, -0.5f,  0.5f, 2.0f, 1.0f, 0.0f,
+		-0.5f, -0.5f, -0.5f, 3.0f, 2.0f, 1.0f,
+		
+		-0.5f, -0.5f,  0.5f, 1.0f, 0.0f, 2.0f,
 		0.5f, -0.5f,  0.5f, 0.0f, 2.0f, 1.0f,
-		0.5f,  0.5f,  0.5f, 1.0f, 0.0f, 2.0f,
+		0.5f,  0.5f,  0.5f, 2.0f, 1.0f, 0.0f,
 		0.5f,  0.5f,  0.5f, 2.0f, 1.0f, 0.0f,
 		-0.5f,  0.5f,  0.5f, 0.0f, 2.0f, 1.0f,
 		-0.5f, -0.5f,  0.5f, 1.0f, 0.0f, 2.0f,
 
-		-0.5f,  0.5f,  0.5f, 2.0f, 1.0f, 0.0f,
+		-0.5f,  0.5f,  0.5f, 0.0f, 2.0f, 1.0f,
 		-0.5f,  0.5f, -0.5f, 0.0f, 2.0f, 1.0f,
-		-0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 2.0f,
 		-0.5f, -0.5f, -0.5f, 2.0f, 1.0f, 0.0f,
-		-0.5f, -0.5f,  0.5f, 0.0f, 2.0f, 1.0f,
-		-0.5f,  0.5f,  0.5f, 1.0f, 0.0f, 2.0f,
-
+		-0.5f, -0.5f, -0.5f, 2.0f, 1.0f, 0.0f,
+		-0.5f, -0.5f,  0.5f, 1.0f, 0.0f, 2.0f,
+		-0.5f,  0.5f,  0.5f, 0.0f, 2.0f, 1.0f,
+		
 		0.5f,  0.5f,  0.5f, 2.0f, 1.0f, 0.0f,
-		0.5f,  0.5f, -0.5f, 0.0f, 2.0f, 1.0f,
-		0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 2.0f,
-		0.5f, -0.5f, -0.5f, 2.0f, 1.0f, 0.0f,
+		0.5f,  0.5f, -0.5f, 1.0f, 0.0f, 2.0f,
+		0.5f, -0.5f, -0.5f, 0.0f, 2.0f, 1.0f,
+		0.5f, -0.5f, -0.5f, 0.0f, 2.0f, 1.0f,
 		0.5f, -0.5f,  0.5f, 0.0f, 2.0f, 1.0f,
-		0.5f,  0.5f,  0.5f, 1.0f, 0.0f, 2.0f,
-
+		0.5f,  0.5f,  0.5f, 2.0f, 1.0f, 0.0f,
+		
 		-0.5f, -0.5f, -0.5f, 2.0f, 1.0f, 0.0f,
 		0.5f, -0.5f, -0.5f, 0.0f, 2.0f, 1.0f,
-		0.5f, -0.5f,  0.5f, 1.0f, 0.0f, 2.0f,
-		0.5f, -0.5f,  0.5f, 2.0f, 1.0f, 0.0f,
-		-0.5f, -0.5f,  0.5f, 0.0f, 2.0f, 1.0f,
-		-0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 2.0f,
-
-		-0.5f,  0.5f, -0.5f, 2.0f, 1.0f, 0.0f,
-		0.5f,  0.5f, -0.5f, 0.0f, 2.0f, 1.0f,
-		0.5f,  0.5f,  0.5f, 1.0f, 0.0f, 2.0f,
+		0.5f, -0.5f,  0.5f, 0.0f, 2.0f, 1.0f,
+		0.5f, -0.5f,  0.5f, 0.0f, 2.0f, 1.0f,
+		-0.5f, -0.5f,  0.5f, 1.0f, 0.0f, 2.0f,
+		-0.5f, -0.5f, -0.5f, 2.0f, 1.0f, 0.0f,
+		
+		-0.5f,  0.5f, -0.5f, 0.0f, 2.0f, 1.0f,
+		0.5f,  0.5f, -0.5f, 1.0f, 0.0f, 2.0f,
+		0.5f,  0.5f,  0.5f, 2.0f, 1.0f, 0.0f,
 		0.5f,  0.5f,  0.5f, 2.0f, 1.0f, 0.0f,
 		-0.5f,  0.5f,  0.5f, 0.0f, 2.0f, 1.0f,
-		-0.5f,  0.5f, -0.5f, 1.0f, 0.0f, 2.0f
+		-0.5f,  0.5f, -0.5f, 0.0f, 2.0f, 1.0f
 	};
 
 	GLuint VBO;
@@ -198,7 +198,7 @@ int main() {
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		float third_phase = (2*M_PI) / 3;
+		float q_phase = (2*M_PI) / 4;
 		GLfloat timeValue = glfwGetTime();
 
 		glUseProgram(cube_shader_program);
@@ -207,10 +207,10 @@ int main() {
 		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -2.0f));
 
 		glm::mat4 projection;
-		projection = glm::perspective(80.0f, 800.0f / 600.0f, 0.1f, 100.0f);
+		projection = glm::perspective(90.0f, 800.0f / 600.0f, 0.1f, 100.0f);
 
-		glm::mat4 model;
-		model = glm::rotate(model, timeValue, glm::vec3(0.5f, 1.0f, 0.0f));
+		/*glm::mat4 model;
+		model = glm::rotate(model, timeValue, glm::vec3(0.5f, 1.0f, 0.0f));*/
 
 		GLint viewLoc = glGetUniformLocation(cube_shader_program, "view");
 		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
@@ -218,10 +218,23 @@ int main() {
 		glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
 		GLint modelLoc = glGetUniformLocation(cube_shader_program, "model");
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 
-		GLint phase = glGetUniformLocation(cube_shader_program, "third_phase");
-		glUniform1f(phase, third_phase);
+		glm::vec3 cubePositions[] = {
+			glm::vec3(0.0f,  0.0f,  0.0f),
+			glm::vec3(2.0f,  5.0f, -15.0f),
+			glm::vec3(-1.5f, -2.2f, -2.5f),
+			glm::vec3(-3.8f, -2.0f, -12.3f),
+			glm::vec3(2.4f, -0.4f, -3.5f),
+			glm::vec3(-1.7f,  3.0f, -7.5f),
+			glm::vec3(1.3f, -2.0f, -2.5f),
+			glm::vec3(1.5f,  2.0f, -2.5f),
+			glm::vec3(1.5f,  0.2f, -1.5f),
+			glm::vec3(-1.3f,  1.0f, -1.5f)
+		};
+
+		GLint phase = glGetUniformLocation(cube_shader_program, "phase");
+		glUniform1f(phase, q_phase);
 		GLint time_val = glGetUniformLocation(cube_shader_program, "time_value");
 		glUniform1f(time_val, timeValue);
 
@@ -243,9 +256,21 @@ int main() {
 		glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));*/
 
 		glBindVertexArray(VAO);
+
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, VBO);
 		//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-		glDrawArrays(GL_TRIANGLES, 0, 36);
+		//glDrawArrays(GL_TRIANGLES, 0, 36);
+
+
+		for (GLuint i = 0; i < 10; i++)
+		{
+			glm::mat4 model;
+			model = glm::translate(model, cubePositions[i]);
+			model = glm::rotate(model, timeValue, glm::vec3(0.5f, 1.0f, 0.0f));
+			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+
+			glDrawArrays(GL_TRIANGLES, 0, 36);
+		}
 		glBindVertexArray(0);
 
 

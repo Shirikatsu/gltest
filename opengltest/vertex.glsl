@@ -6,7 +6,7 @@ layout (location = 1) in vec3 color;
 out vec3 newColor;
 
 uniform mat4 transform;
-uniform float third_phase;
+uniform float phase;
 uniform float time_value;
 
 uniform mat4 model;
